@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorte Fugle</title>
+    <link rel="stylesheet" href="hej.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Ubuntu|PT+Mono" rel="stylesheet">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+
+<body>
+    
+    <header>
+        <a href="#splash"><img class="logo" src="fugle1.png" alt="Kyoto logo"></a>
+        <div id="myNav" class="overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <a href="index.html" onclick="closeNav()">FORSIDE</a>
+                <a href="koncerter.html" onclick="closeNav()">KONCERTER</a>
+                <a href="anmeldelser.html" onclick="closeNav()">ANMELDELSER</a>
+                <a href="musikvideo.html" onclick="closeNav()">MUSIKVIDEO</a>
+            </div>
+
+        </div>
+
+        <!-- Use any element to open/show the overlay navigation menu -->
+
+        <div onclick="openNav();myFunction(this);" class="menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <div class="background">
+
+        <section id="artdeco">
+            <h2>MUSIKVIDEO</h2>
+            <div class="sectionwrapper">
+                <h3>Musikvideo til "Sandheden" samt tekst</h3>
+
+                <article>
+                    <div>
+                        <video id="about_video" width="100%" poster="musik.png" controls>
+						<source src="Musikvideo.mp4" type="video/mp4">
+					</video>
+                    </div>
+                    <div>
+                        <aside id="vers1">
+                            <p>Smagen af i går<br> er en enlig kamp mod tiden<br> Jeg var ved at brænde ud<br> i en uendelig jagt på viden<br> Det er sandheden<br> Ubarmhjertige sandhed
+                            </p>
+                        </aside>
+                        <aside id="vers2">
+                            <p>Solen skinner mig i fjæset<br> Jeg ku’ bande, det da helvedes til<br> De mange ting der lammer<br> hamrer videre mens jeg ik’<br> vil høre sandheden<br> Ubarmhjertige sandhed<br>
+                            </p>
+                        </aside>
+                        <aside id="omkvade">
+
+                            <p>Jeg vil nyde lige så stille her er stjerneklart<br> Jeg vil danse rundt til alle bare siger:<br> Lad mig ligge lige her
+                            </p>
+                        </aside>
+                        <aside id="vers3">
+                            <p>Snip, snap, snude<br> lad den svæve rundt derude<br> for mig selv og mine rygter<br> har jeg bundet som en kællingeknude<br> Ubarmhjertige sandhed
+                            </p>
+
+                        </aside>
+                        <aside id="vers4">
+                            <p>Du ved i morgen er i morgen<br> og i går er før i dag<br> men jeg har mistet min hukommelse<br> og jeg kan ikke rigtig mærke sandheden<br> Ubarmhjertige sandhed
+                            </p>
+                        </aside>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="function.js"></script>
+</body>
+
+</html>

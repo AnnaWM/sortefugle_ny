@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+}
+
+section {
+    padding: 1em;
+}
+
+body {
+    background-image: url(Bird_BG.png);
+    background-repeat:no-repeat;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+}
+
+.background {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.sectionwrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.sectionwrapper1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex-grow: 1;
+    flex-basis: 250px;
+    /*                                                                            margin: 10px;*/
+    padding: 10px;
+      
+}
+
+#artdeco{
+    margin:0 auto;
+    width: 80%;
+}
+
+img {
+    width: 100%;
+    /*                                                                            max-width: 200px;*/
+}
+
+/* --------- skrift -------- */
+
+p {
+    color: black;
+    font-family: 'PT Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: helvetica neue;
+    text-transform: uppercase;
+    color: #0b0080;
+    font-size: 120px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 180px;
+    margin-bottom: 300px;
+}
+
+h2 {
+    /*font-family: 'Permanent Marker', cursive;
+    font-family: 'Rock Salt', cursive;*/
+    font-family: 'PT Mono', monospace;
+    font-style: normal;
+    text-transform: uppercase;
+    color: black;
+    font-size: 49px;
+    text-align: center;
+    margin-bottom: 20;
+    margin-top: 0;
+    width: 100%;
+}
+
+/*h2:after {
+    content: "Sorte Fugle";
+    position: absolute; left: 445px; top: 68.px;
+    color: rgba(28,22,22,0.6);
+}*/
+
+h3 {
+    font-family: 'PT Mono', monospace;
+    text-transform: uppercase;
+    color: black;
+    font-size: 25px;
+}
+
+h4 {
+    font-family: 'PT Mono', monospace;
+    text-transform: uppercase;
+    color: coral;
+    font-size: 25px;
+
+}
+
+@font-face {
+    font-family: 'true_crimesregular';
+    src: url('true-crimes-webfont.eot');
+    src: url('true-crimes-webfont.eot?#iefix') format('embedded-opentype'),
+         url('true-crimes-webfont.woff2') format('woff2'),
+         url('true-crimes-webfont.woff') format('woff'),
+         url('true-crimes-webfont.ttf') format('truetype'),
+         url('true-crimes-webfont.svg#true_crimesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* --------- nav styling -------- */
+
+header {
+    width: 100%;
+    /*position: fixed;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    /*float: left;*/
+    width: 120px;
+    margin-top: 0px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.menu {
+    /*float: right;*/
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+/* --------- The overlay (background) -------- */
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 0;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 3;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgba(43, 51, 72);
+    /* Black fallback color */
+    background-color: rgba(65, 58, 58, 0.9);
+    /* Black w/opacity */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* --------- Position the content inside the overlay -------- */
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 45px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* --------- The navigation links inside the overlay -------- */
+
+.overlay a {
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'PT Mono', monospace;
+    font-size: 35px;
+    color: #f5f0ed;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+}
+
+.overlay .sub {
+    padding: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    color: #f5f0ed;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+    margin-top: -15px;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* ------- Position the close button (top right corner) ------ */
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* Laptop i 16x9 format, 1024px og opefter, og dermed billeder i proportionerne 5120 * 2880px (eller 2560 * 1440), som skaleres ned på alle devices */
+    #splash {
+        background-image: url('AM1_Desktop_Landscape.png');
+        height: 100vh;
+    }
+    .sectionwrapper {
+        display: flex;
+        flex-wrap: wrap;
+        /*height: 95vh;*/
+    }
+}
+
+#artdeco a {
+    padding: 5px;
+    color: #ffffff;
+    background-color: #404040;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-family: 'PT Mono', monospace;
+    font-size: 13px;
+}
+
+#artdeco img {
+     border-radius: 100%;
+    filter: grayscale(0%);
+    border:5px solid #000000;
+}
+
+#iefix img {
+border-radius: 00%;
+filter: grayscale(0%);
+border:1px solid #000000;
+   
+}
+
+#iefix {
+position:relative;
+/*z-index:-1;*/
+}
+
+#fix {
+position:relative;
+z-index:-1;
+}
+
+article aside {
+  /*position: absolute;*/
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+
+
